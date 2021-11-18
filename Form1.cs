@@ -48,5 +48,21 @@ namespace TableCopyFontChangeTest
 
             this.Close();
         }
+
+        private void btLoadText_Click(object sender, EventArgs e)
+        {
+            DocumentModel sourcedoc = DocumentModel.Load("Formal_FA_JR_Deny_HeaderCorrection.docx");
+            DocumentModel targetdoc = DocumentModel.Load("FormalizeType03.docx");
+
+            targetdoc.Bookmarks["Options"].GetContent(false).LoadText(sourcedoc.Content.ToString(), new CharacterFormat()); // results in correctly formatted text except spanish text is lowercase
+            //targetdoc.Bookmarks["Options"].GetContent(false).LoadText(sourcedoc.Content.ToString()); // results in single spaced all caps
+            //targetdoc.Bookmarks["Options"].GetContent(false).Set(sourcedoc.Sections[0].Blocks.Content);  // results in double spacing but correct upper/lower case
+
+            File.Delete("TargetDocUpdated.docx");
+            targetdoc.Save("TargetDocUpdated.docx");
+            System.Diagnostics.Process.Start("TargetDocUpdated.docx");
+
+            this.Close();
+        }
     }
 }

@@ -30,6 +30,7 @@ namespace TableCopyFontChangeTest
         private void InitializeComponent()
         {
             this.btRunTest = new System.Windows.Forms.Button();
+            this.btLoadText = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btRunTest
@@ -37,17 +38,29 @@ namespace TableCopyFontChangeTest
             this.btRunTest.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btRunTest.Location = new System.Drawing.Point(32, 23);
             this.btRunTest.Name = "btRunTest";
-            this.btRunTest.Size = new System.Drawing.Size(163, 68);
+            this.btRunTest.Size = new System.Drawing.Size(287, 37);
             this.btRunTest.TabIndex = 0;
-            this.btRunTest.Text = "Run Test";
+            this.btRunTest.Text = "Table Copy Test";
             this.btRunTest.UseVisualStyleBackColor = true;
             this.btRunTest.Click += new System.EventHandler(this.btRunTest_Click);
+            // 
+            // btLoadText
+            // 
+            this.btLoadText.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btLoadText.Location = new System.Drawing.Point(32, 66);
+            this.btLoadText.Name = "btLoadText";
+            this.btLoadText.Size = new System.Drawing.Size(287, 37);
+            this.btLoadText.TabIndex = 1;
+            this.btLoadText.Text = "LoadText Test";
+            this.btLoadText.UseVisualStyleBackColor = true;
+            this.btLoadText.Click += new System.EventHandler(this.btLoadText_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(240, 117);
+            this.ClientSize = new System.Drawing.Size(353, 117);
+            this.Controls.Add(this.btLoadText);
             this.Controls.Add(this.btRunTest);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -58,6 +71,7 @@ namespace TableCopyFontChangeTest
         #endregion
 
         private System.Windows.Forms.Button btRunTest;
+        private System.Windows.Forms.Button btLoadText;
     }
 }
 
